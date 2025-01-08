@@ -1,7 +1,7 @@
+name: Wiki Sync
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   wiki-sync:
