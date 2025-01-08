@@ -1,0 +1,21 @@
+jobs:
+  wiki-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Get modified files
+        run: echo "MODIFIED_FILES=`git diff HEAD^ --name-only | xargs`" >> $GITHUB_ENV
+
+      - name: Wiki Sync
+        uses: talkiq/confluence-wiki-sync@v1
+        with:
+          wiki-base-url: https://pettinato.atlassian.net/
+          user: alessandrapettinato@hotmail.it
+          token: ${{ secrets.CONFLUENCE_SYNC }}
+          modified-files: ${{ env.MODIFIED_FILES }}
+          space-name: Software Development
+          root-page-title: CONFLUENCE SYNC TEST
