@@ -16,6 +16,6 @@ jobs:
           wiki-base-url: https://pettinato.atlassian.net/
           user: alessandrapettinato@hotmail.it
           token: ${{ secrets.CONFLUENCE_SYNC }}
-          modified-files: ${{ env.MODIFIED_FILES }}
+          modified-files: README.md
           space-name: Software Development
           root-page-title: CONFLUENCE SYNC TEST
