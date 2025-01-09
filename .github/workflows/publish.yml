@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Publish Markdown to Confluence
-        uses: nejdetkadir/markdown-to-confluence@v1
+        uses: markdown-confluence/publish@v1
         with:
           confluenceBaseUrl: https://pettinato.atlassian.net
           confluenceParentId: 65837
