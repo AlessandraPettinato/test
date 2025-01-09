@@ -22,5 +22,5 @@ jobs:
           confluenceParentId: 65837
           atlassianUserName: alessandrapettinato@hotmail.it
           atlassianApiToken: ${{ secrets.CONFLUENCE_SYNC }}
-          folderToPublish: folder_one folder_two
-          contentRoot: /folder_one /folder_two
+          folderToPublish: folder_one
+          contentRoot: /folder_one
