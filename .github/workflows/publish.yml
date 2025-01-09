@@ -1,7 +1,12 @@
 name: Markdown-confluence test
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - "new_workflow_test"
+  pull_request:
+    branches:
+      - "main"
 
 jobs:
   publish:
