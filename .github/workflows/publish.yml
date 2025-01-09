@@ -1,0 +1,26 @@
+name: Markdown-confluence test
+
+on:
+  push:
+    branches:
+      - "new_workflow_test"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Publish Markdown to Confluence
+        uses: markdown-confluence/publish@v1
+        with:
+          confluenceBaseUrl: https://pettinato.atlassian.net
+          confluenceParentId: 65837
+          atlassianUserName: alessandrapettinato@hotmail.it
+          atlassianApiToken: ${{ secrets.CONFLUENCE_SYNC }}
+          folderToPublish: folder_one
+          contentRoot: /folder_one
